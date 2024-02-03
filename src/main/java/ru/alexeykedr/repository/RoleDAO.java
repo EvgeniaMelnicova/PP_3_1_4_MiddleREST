@@ -1,4 +1,4 @@
-package ru.alexeykedr.DAO;
+package ru.alexeykedr.repository;
 
 import ru.alexeykedr.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;

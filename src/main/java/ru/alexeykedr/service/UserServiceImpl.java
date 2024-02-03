@@ -1,7 +1,7 @@
 package ru.alexeykedr.service;
 
-import ru.alexeykedr.DAO.RoleDAO;
-import ru.alexeykedr.DAO.UserDAO;
+import ru.alexeykedr.repository.RoleDAO;
+import ru.alexeykedr.repository.UserDAO;
 import ru.alexeykedr.model.Role;
 import ru.alexeykedr.model.User;
 import org.springframework.security.crypto.password.PasswordEncoder;

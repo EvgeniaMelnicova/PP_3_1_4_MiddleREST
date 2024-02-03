@@ -1,6 +1,6 @@
 package ru.alexeykedr.security;
 
-import ru.alexeykedr.DAO.UserDAO;
+import ru.alexeykedr.repository.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -1,6 +1,6 @@
 package ru.alexeykedr.service;
 
-import ru.alexeykedr.DAO.RoleDAO;
+import ru.alexeykedr.repository.RoleDAO;
 import ru.alexeykedr.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
