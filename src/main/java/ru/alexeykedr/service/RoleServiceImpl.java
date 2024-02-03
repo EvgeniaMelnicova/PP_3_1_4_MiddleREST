@@ -1,6 +1,6 @@
 package ru.alexeykedr.service;
 
-import ru.alexeykedr.repository.RoleDAO;
+import ru.alexeykedr.repository.RoleRepository;
 import ru.alexeykedr.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,27 +12,27 @@ import java.util.Set;
 @Service
 public class RoleServiceImpl implements RoleService{
 
-    private final RoleDAO roleDAO;
+    private final RoleRepository roleRepository;
 
     @Autowired
-    public RoleServiceImpl(RoleDAO roleDAO) {
-        this.roleDAO = roleDAO;
+    public RoleServiceImpl(RoleRepository roleRepository) {
+        this.roleRepository = roleRepository;
     }
 
     @Override
     public List<Role> findAllRole() {
-        return roleDAO.findAll();
+        return roleRepository.findAll();
     }
 
     @Override
     @PostConstruct
     public void addDefaultRole() {
-        roleDAO.save(new Role("ROLE_USER"));
-        roleDAO.save(new Role("ROLE_ADMIN"));
+        roleRepository.save(new Role("ROLE_USER"));
+        roleRepository.save(new Role("ROLE_ADMIN"));
     }
 
     @Override
     public Set<Role> findByIdRoles(List<Long> roles) {
-      return new HashSet<>(roleDAO.findAllById(roles));
+      return new HashSet<>(roleRepository.findAllById(roles));
     }
 }
