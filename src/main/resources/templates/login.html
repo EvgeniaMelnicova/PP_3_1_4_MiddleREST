@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+</head>
+<body>
+<div>
+  <div class="container text-center">
+    <h1>Welcome, dear guest!</h1>
+    <br>
+    <h2>So that we can continue, please introduce yourself.</h2>
+  </div>
+  <form method="post" action="/login">
+    <div class="text-center p-5">
+      <p class="h2 fw-bold" style="text-align: center; font-family: Mono-type Corsica, serif">Who are you?</p>
+
+      <div class="form-floating w-25 mx-auto">
+        <input type="text" class="form-control" name="j_email" id="username" placeholder="Your email"/>
+        <label for="username">Enter e-mail</label>
+      </div>
+      <br>
+      <div class="form-floating mb-2 w-25 mx-auto">
+        <input type="password" class="form-control" name="j_password" id="password" placeholder="Your password"/>
+        <label for="password">Enter password</label>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary btn-lg w-25">Login</button>
+      <br/>
+      <div th:if="${param.error}" style="color: red">
+        Incorrect name or password!</div>
+    </div>
+  </form>
+</div>
+</body>
+</html>

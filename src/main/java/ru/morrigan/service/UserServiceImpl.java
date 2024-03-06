@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public void updateUser(User user) {
-        if (!user.getPassword().equals(userRepository.findById(user.getUserId()).get().getPassword())) {
+        if (!user.getPassword().equals(userRepository.findById(user.getId()).get().getPassword())) {
             setPassword(user);
         }
         userRepository.save(user);
@@ -49,6 +49,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Override
     public Optional<User> getUserById(Long id) {
         return userRepository.findById(id);
+    }
+
+    @Override
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 
     @Override

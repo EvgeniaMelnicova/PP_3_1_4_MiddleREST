@@ -22,12 +22,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private final BCryptPasswordEncoder passwordEncoder;
     private final Config config;
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
-        auth.authenticationProvider(daoAuthenticationProvider());
-    }
-
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
@@ -35,22 +29,28 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         provider.setUserDetailsService(userDetailsService);
         return provider;
     }
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
+        auth.authenticationProvider(daoAuthenticationProvider());
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable() // отключение CSRF атак
+        http
+                .csrf().disable() // отключение CSRF атак
                 .authorizeRequests()
-                .antMatchers("/login", "/").permitAll()
+                .antMatchers("/login", "/", "/api/**").permitAll()
                 .antMatchers("/admin/**").access("hasAuthority('ADMIN')")
                 .antMatchers("/user/**").access("hasAnyAuthority('ADMIN', 'USER')")
                 .anyRequest().authenticated()
-                .and().formLogin()
+                .and()
+                .formLogin().successHandler(successUserHandler)
                 .loginPage("/login")
                 .loginProcessingUrl("/login")
                 .usernameParameter("j_email")
                 .passwordParameter("j_password")
-                .permitAll()
-                .successHandler(successUserHandler);
+                .permitAll();
 
         http.logout()
                 .permitAll()

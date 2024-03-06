@@ -11,5 +11,6 @@ public interface UserService {
     void updateUser(User user);
     List<User> getUsers();
     Optional<User> getUserById(Long id);
+    User getUserByEmail(String email);
     void save(User user);
 }
