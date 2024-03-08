@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="https://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Login page</title>
-</head>
+<html lang="en" class="h-100"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="layouts/main :: htmlhead"/>
+
 <body>
 <div>
   <div class="container text-center">
@@ -26,12 +27,14 @@
         <label for="password">Enter password</label>
       </div>
       <br>
-      <button type="submit" class="btn btn-primary btn-lg w-25">Login</button>
+      <button type="submit">Login</button>
       <br/>
       <div th:if="${param.error}" style="color: red">
         Incorrect name or password!</div>
     </div>
   </form>
 </div>
+
+<div th:replace="layouts/main :: footer"/>
 </body>
 </html>

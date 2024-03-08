@@ -1,0 +1,42 @@
+body {
+    background-color: #000;
+    background-image: url("https://i.pinimg.com/originals/91/64/cc/9164cc2532071955d898cc64d485b017.png");
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left bottom;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    border: 3px solid #C0C0C0;
+    padding: 20px 40px;
+    margin: 0;
+}
+
+th, td {border: 1px solid #C0C0C0; color: #C0C0C0;}
+H1, H2, H3, H4, H5,H6,p{color: #C0C0C0;}
+H1{
+    font-family: Mistral, serif;
+    font-weight: initial;
+    text-align: center;
+    font-size: 300%;
+}
+H2{
+    font-family: Monotype Corsiva, serif;
+    font-weight: initial;
+    text-align: center;
+}
+button{
+    color: #C0C0C0;
+    background-color: #000;
+    padding: 5px 10px 5px 10px;
+}
+input[type=submit]{
+    color: #C0C0C0;
+    background-color: #000;
+    padding: 5px 10px 5px 10px;
+}

@@ -24,18 +24,6 @@ public class AdminApiController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
- /*
-    @GetMapping("/{id}")
-    public ResponseEntity<User> getUser (@PathVariable("id") long id) {
-        Optional<User> user = userService.getUserById(id);
-        if (user.isPresent()) {
-            return ResponseEntity.ok(user.get());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
-*/
- // Копипаст у Наташи
     @GetMapping("/{id}")
     public ResponseEntity<User> getUser(@PathVariable("id") long id) {
         Optional<User> userOptional = userService.getUserById(id);

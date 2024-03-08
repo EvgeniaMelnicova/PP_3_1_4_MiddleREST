@@ -23,7 +23,7 @@ public class UserApiController {
 
     @GetMapping
     public ResponseEntity<User> getUser(Principal principal) {
-        User user = usersService.getUserByEmail(principal.getName());
+        User user = usersService.getUserByUsername(principal.getName());
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 

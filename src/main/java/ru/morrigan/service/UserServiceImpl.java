@@ -57,6 +57,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
+    public User getUserByUsername(String username) {
+        return userRepository.getUserByUsername(username);
+    }
+
+    @Override
     @Transactional
     public void save(User user) {
         userRepository.save(user);

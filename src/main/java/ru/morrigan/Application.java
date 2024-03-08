@@ -12,6 +12,6 @@ public class Application {
     }
     private static void openHomePage() throws IOException {
         Runtime rt = Runtime.getRuntime();
-        rt.exec("rundll32 url.dll,FileProtocolHandler " + "http://localhost:8083/admin/");
+        rt.exec("rundll32 url.dll,FileProtocolHandler " + "http://localhost:8083/");
     }
 }
