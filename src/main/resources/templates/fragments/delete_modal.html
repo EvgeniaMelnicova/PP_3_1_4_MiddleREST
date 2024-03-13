@@ -1,0 +1,80 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="deleteModalLabel">Delete user</h5>
+            <button type="button" class="close" data-dismiss="modal"
+                    aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form>
+            <div class="modal-body text-center">
+                <div class="form-group required">
+                    <div class="controls">
+                        <p>
+                            <label for="idDeleteUser">
+                                <strong>ID</strong>
+                                <input id="idDeleteUser" class="form-control"
+                                       type="number" disabled>
+                            </label>
+                        </p>
+                        <p>
+                            <label for="usernameDeleteUser">
+                                <strong>Username</strong>
+                                <input id="usernameDeleteUser"
+                                       class="form-control" type="text"
+                                       disabled>
+                            </label>
+                        </p>
+                        <p>
+                            <label for="nameDeleteUser">
+                                <strong>Name</strong>
+                                <input id="nameDeleteUser"
+                                       class="form-control" type="text"
+                                       disabled>
+                            </label>
+                        </p>
+                        <p>
+                            <label for="lastnameDeleteUser">
+                                <strong>Lastname</strong>
+                                <input id="lastnameDeleteUser"
+                                       class="form-control" type="text"
+                                       disabled>
+                            </label>
+                        </p>
+                        <p>
+                            <label for="ageDeleteUser">
+                                <strong>Age</strong>
+                                <input id="ageDeleteUser"
+                                       class="form-control" type="text"
+                                       disabled>
+                            </label>
+                        </p>
+                        <p>
+                            <label for="emailDeleteUser">
+                                <strong>Email</strong>
+                                <input id="emailDeleteUser"
+                                       class="form-control" type="text"
+                                       disabled>
+                            </label>
+                        </p>
+                        <label class="container-fluid col-6"
+                               for="deleteUserRoles">
+                            <strong>Role</strong>
+                            <select id="deleteUserRoles" class="form-select"
+                                    size="2" multiple disabled>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"
+                        data-dismiss="modal">close
+                </button>
+                <button type="submit" class="btn btn-danger"
+                        aria-pressed="true">Delete
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
