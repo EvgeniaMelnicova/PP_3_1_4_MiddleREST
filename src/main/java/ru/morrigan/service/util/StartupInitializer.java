@@ -32,7 +32,7 @@ public class StartupInitializer {
 
         Set<Role> roleListUser = new HashSet<>();
         User user = new User();
-        user.setName("Valeri");
+        user.setName("Valeria");
         user.setLastname("Abilova");
         user.setAge(26);
         user.setEmail("User@yandex.com");
