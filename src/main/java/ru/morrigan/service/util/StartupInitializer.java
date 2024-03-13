@@ -32,11 +32,11 @@ public class StartupInitializer {
 
         Set<Role> roleListUser = new HashSet<>();
         User user = new User();
-        user.setName("User");
-        user.setLastname("Usov");
-        user.setAge(24);
+        user.setName("Valeri");
+        user.setLastname("Abilova");
+        user.setAge(26);
         user.setEmail("User@yandex.com");
-        user.setUsername(user.getName());
+        user.setUsername("user");
         user.setPassword(bcpe.encode("user"));
 
         roleListUser.add(roleUser);
@@ -45,14 +45,13 @@ public class StartupInitializer {
 
         Set<Role> roleListAdmin = new HashSet<>();
         User admin = new User();
-        admin.setUsername(admin.getName());
-        admin.setName("Admin");
-        admin.setLastname("Adminov");
-        admin.setAge(36);
+        admin.setName("Moritsuki");
+        admin.setLastname("Kurokami");
+        admin.setAge(29);
         admin.setEmail("Admin@yandex.com");
+        admin.setUsername("admin");
         admin.setPassword(bcpe.encode("admin"));
 
-        roleListAdmin.add(roleUser);
         roleListAdmin.add(roleAdmin);
         admin.setRoles(roleListAdmin);
         us.save(admin);

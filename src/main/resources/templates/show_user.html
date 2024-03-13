@@ -5,22 +5,8 @@
 
 <body>
 <!--Top panel-->
-<div class="container-fluid m-0 p-0">
-  <div class="row bg-dark bg-gradient m-0 p-2">
-    <div class="col-11 d-inline">
-                <span class="text-white" id="top-panel">
-                </span>
-    </div>
-    <div class="col-1 text-white h4">
-      <form th:action="@{/logout}" method="post">
-        <input class="btn btn-outline-secondary" type="submit" value="Logout"/>
-      </form>
-    </div>
-  </div>
-</div>
-
+<div th:replace="fragments/top_panel :: top_panel"/>
 <br>
-
 <div class="d-flex align-items-start">
   <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
     <a class="nav-link active" style="background-color: darkgray" id="v-pills-user-tab" data-bs-toggle="pill" href="#v-pills-user" role="tab"

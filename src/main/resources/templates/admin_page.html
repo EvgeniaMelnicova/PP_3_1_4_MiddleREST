@@ -5,20 +5,7 @@
 
 <body>
 <!-- Top panel -->
-<div class="container-fluid m-0 p-0">
-  <div class="row bg-dark bg-gradient m-0 p-2">
-    <div class="col-11 p-2">
-                <span class="text-white" id="top-panel">
-
-                </span>
-    </div>
-    <div class="col-1 text-white h4">
-      <form th:action="@{/logout}" method="post">
-        <input class="btn btn-outline-secondary" type="submit" value="Logout"/>
-      </form>
-    </div>
-  </div>
-</div>
+<div th:replace="fragments/top_panel :: top_panel"/>
 
 <br>
 
