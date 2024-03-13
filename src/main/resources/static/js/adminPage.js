@@ -1,27 +1,6 @@
 const url = '/api/admin/'
 const dbRoles = [{id: 1, name: "ROLE_ADMIN"}, {id: 2, name: "ROLE_USER"}]
 
-let userInfo = ''
-const showUser = (user) => {
-    const container = document.getElementById("tbody-user-info")
-    userInfo += `
-        <tr>
-            <td>${user.id}</td>
-            <td>${user.username}</td>
-            <td>${user.name}</td>
-            <td>${user.lastname}</td>
-            <td>${user.age}</td>
-            <td>${user.email}</td>
-            <td>${user.rolesToString}</td>
-        </tr>`
-    container.innerHTML = userInfo
-}
-fetch('api/user/')
-    .then(response => response.json())
-    .then(data => showUser(data))
-    .catch(error => console.log(error))
-
-
 //Create user
 const formNew = document.getElementById('formNewUser')
 const username = document.getElementById('username')
