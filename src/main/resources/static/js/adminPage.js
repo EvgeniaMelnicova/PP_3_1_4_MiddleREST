@@ -162,17 +162,8 @@ on(document, 'click', '.btnDelete', e => {
         lastnameDelete.value = user.lastname
         ageDelete.value = user.age
         emailDelete.value = user.email
-        rolesDelete.innerHTML = `
-            <option value="${dbRoles[0].id}">${dbRoles[0].name}</option>
-            <option value="${dbRoles[1].id}">${dbRoles[1].name}</option>
-            `
-        Array.from(rolesDelete.options).forEach(opt => {
-            user.roles.forEach(role => {
-                if (role.name === opt.text) {
-                    opt.selected = true
-                }
-            })
-        })
+        rolesDelete.value = user.rolesToString
+
         modalDelete.show()
     }
 })
